@@ -79,12 +79,4 @@ jobs:
             push: true
             tags: ${{ secrets.DOCKER_USERNAME }}/testrepokavi:latest
           
-        - name: Run the image in a container
-          uses: addnab/docker-run-action@v3
-          with:
-            image: ${{ secrets.DOCKER_USERNAME }}/testrepokavi:latest
-            run: |
-              echo "runing the docker image"
-              echo "Testing the nodejs  app endpoints"
-              echo ${{ steps.docker_build.outputs.digest }}
- 
+      
